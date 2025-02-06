@@ -104,6 +104,8 @@ else
     done
 fi
 
+
+
 # 5 Check & Create Athena Database
 DATABASE_EXISTS=$(aws athena list-databases --query "DatabaseList[?Name=='$ATHENA_DATABASE'].Name" --output text)
 
