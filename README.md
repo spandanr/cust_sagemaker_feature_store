@@ -2,7 +2,7 @@
 
 This project demonstrates the use of AWS SageMaker Feature Store for managing machine learning features. It includes:
 
-## Ì≥å Code Components
+## Code Components
 
 ### **1Ô∏è‚É£ `setup.sh`**
 - Provisions all necessary AWS resources:
@@ -29,23 +29,23 @@ This project demonstrates the use of AWS SageMaker Feature Store for managing ma
 
 ---
 
-## Ì≥å Prerequisites
+## Prerequisites
 
 Ensure the following are installed before running the project:
 
 ‚úÖ **AWS CLI** ‚Äì Install & Configure AWS credentials  
 aws configure
 
-## ÔøΩÔøΩÔøΩ Create the python virtual environment and install the dependencies in requirements.txt
+‚úÖ ## Create the python virtual environment and install the dependencies in requirements.txt
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
 venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 
 
-Ì≥å Execution Sequence
+Execution Sequence
 
-1Ô∏è‚É£  Set Up AWS Resources: Run ./setup.sh in bash
+. Set Up AWS Resources: Run ./setup.sh in bash
 
 2. Stream Data to Feature Store: python update_feature_store.py
 
