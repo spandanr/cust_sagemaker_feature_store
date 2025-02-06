@@ -44,6 +44,8 @@ source venv/bin/activate  # macOS/Linux
 
 venv\Scripts\activate  # Windows
 
+Run Set-ExecutionPolicy RemoteSigned -Scope CurrentUser in powershell if there is any issue in activating the virtual environment
+
 pip install -r requirements.txt
 
 
