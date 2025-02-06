@@ -37,13 +37,17 @@ Ensure the following are installed before running the project:
 aws configure
 
 ✅ ## Create the python virtual environment and install the dependencies in requirements.txt
+
 python -m venv venv
+
 source venv/bin/activate  # macOS/Linux
+
 venv\Scripts\activate  # Windows
+
 pip install -r requirements.txt
 
 
-Execution Sequence
+## Execution Sequence
 
 . Set Up AWS Resources: Run ./setup.sh in bash
 
