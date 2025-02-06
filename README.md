@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 ## Execution Sequence
 
-. Set Up AWS Resources: Run ./setup.sh in bash
+1. Set Up AWS Resources: Run ./setup.sh in bash
 
 2. Stream Data to Feature Store: python update_feature_store.py
 
