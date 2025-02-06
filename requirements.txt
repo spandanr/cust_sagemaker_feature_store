@@ -1,0 +1,6 @@
+boto3
+pandas
+datetime
+ipykernel
+scikit-learn
+botocore
