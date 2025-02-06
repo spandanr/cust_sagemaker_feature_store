@@ -1,0 +1,14 @@
+# Ignore system files
+.DS_Store
+*.log
+
+# Ignore virtual environments
+venv/
+__pycache__/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore AWS credentials (if any)
+.aws/
+
