@@ -23,7 +23,7 @@ s3_client = boto3.client("s3", region_name=AWS_REGION)
 athena_client = boto3.client("athena", region_name=AWS_REGION)
 sagemaker_client = boto3.client("sagemaker", region_name=AWS_REGION)
 
-# 1️⃣ RUN ATHENA QUERY TO FETCH HISTORICAL DATA
+# 1 Run Athena query to fetch historical data
 def run_athena_query():
     query = f"""
     SELECT customer_id, event_time, latest_purchase_value, latest_loyalty_score
@@ -39,7 +39,7 @@ def run_athena_query():
     print(f"✅ Athena query started (QueryExecutionId: {query_execution_id})")
     return query_execution_id
 
-# 2️⃣ WAIT FOR QUERY EXECUTION TO COMPLETE
+# 2. Wait for query execution to complete
 def wait_for_query(query_execution_id):
     while True:
         response = athena_client.get_query_execution(QueryExecutionId=query_execution_id)
@@ -56,7 +56,7 @@ def wait_for_query(query_execution_id):
     else:
         raise Exception(f"❌ Query failed: {response['QueryExecution']['Status']['StateChangeReason']}")
 
-# 3️⃣ DOWNLOAD QUERY RESULTS FROM S3
+# 3 Download query results to S3
 def download_and_load_results(output_location):
     filename = "historical_features.csv"
     s3_client.download_file(ATHENA_BUCKET, output_location.split("/")[-1], filename)
@@ -69,7 +69,7 @@ def download_and_load_results(output_location):
     print(f"✅ Loaded {len(df)} historical feature records into Pandas DataFrame.")
     return df
 
-# 4️⃣ TRAIN ML MODEL
+# 4. Train ML model
 def train_ml_model(df):\
   
 
@@ -91,7 +91,7 @@ def train_ml_model(df):\
 
     return model
 
-# 5️⃣ SAVE MODEL TO S3
+# 5. Save model to S3
 def save_model(model):
     model_filename = "model.pkl"
     with open(model_filename, "wb") as model_file:
