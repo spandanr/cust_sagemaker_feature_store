@@ -1,7 +1,7 @@
 
 import boto3
 import pandas as pd
-import pickle  # If using a locally trained model
+import pickle  
 import json
 from botocore.exceptions import NoCredentialsError
 
